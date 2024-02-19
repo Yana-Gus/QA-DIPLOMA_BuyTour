@@ -15,12 +15,26 @@
 Приложение в собственной СУБД должно сохранять информацию о том, успешно ли был совершён платёж и каким способом. Данные карт при этом сохранять не допускается.
 
 ## Процедура запуска автотестов
+### MySQL
   1. _Клонировать репозиторий командой_ git clone https://github.com/Yana-Gus/QA-DIPLOMA_BuyTour.git
   2. _Открыть проект в_ **IntelliJ IDEA**
   3. _Запуск контейнера docker командой:_ docker-compose up
   4. _Запуск приложения командой:_ java '-Dspring.datasource.url=jdbc:mysql://localhost:3306/app' -jar ./artifacts/aqa-shop.jar
-  5. _Открыть в браузере сраницу приложения:_ "localhost:8080"
-  6. _Запуск тестов и отчетов Allure:_
-     * В терминале ввести команду ./gradlew clean test
+  5. _Открыть в браузере страницу приложения:_ "localhost:8080"
+  6. _Запуск тестов:_
+     * В терминале ввести команду ./gradlew clean test '-Ddb.url=jdbc:mysql://localhost:3306/app'
+  8. _Формирование отчетов Allure:_
      * В терминале ввести команду ./gradlew allureReport
-  8. _Остановить контейнер командой:_ docker compose down
+  9. _Остановить контейнер командой:_ docker compose down
+
+### PostgreSQL
+  1. _Клонировать репозиторий командой_ git clone https://github.com/Yana-Gus/QA-DIPLOMA_BuyTour.git
+  2. _Открыть проект в_ **IntelliJ IDEA**
+  3. _Запуск контейнера docker командой:_ docker-compose up
+  4. _Запуск приложения командой:_ java '-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app' -jar ./artifacts/aqa-shop.jar
+  5. _Открыть в браузере страницу приложения:_ "localhost:8080"
+  6. _Запуск тестов:_
+     * В терминале ввести команду ./gradlew clean test '-Ddb.url=jdbc:postgresql://localhost:5432/app'
+  8. _Формирование отчетов Allure:_
+     * В терминале ввести команду ./gradlew allureReport
+  9. _Остановить контейнер командой:_ docker compose down

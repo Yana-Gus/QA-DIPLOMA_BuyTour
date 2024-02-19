@@ -1,5 +1,5 @@
 Thumbs.db*
-mysql
+/mysql/
 .DS_Store
 HELP.md
 .gradle
@@ -44,4 +44,4 @@ out/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-/mysql/
+

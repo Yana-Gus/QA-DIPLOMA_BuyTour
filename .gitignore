@@ -1,6 +1,5 @@
 Thumbs.db*
-.data
-mysql/data
+mysql/
 .DS_Store
 HELP.md
 .gradle
